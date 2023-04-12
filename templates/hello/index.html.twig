@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HelloController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Bonjour {{ controller_name }}! ✅</h1>
+    <h2>{{ action }} {{ controller_name }}! ✅</h2>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ '/Users/cedric/www/learn-symfony/myFirstSymfony/src/Controller/HelloController.php'|file_link(0) }}">src/Controller/HelloController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/Users/cedric/www/learn-symfony/myFirstSymfony/templates/hello/index.html.twig'|file_link(0) }}">templates/hello/index.html.twig</a></code></li>
+    </ul>
+</div>
+ <!-- HEADER : la navbar -->
+            <header class="navh navbar navbar-expand-lg navbar-light bg-light">
+                <!--logo -->
+                <a class="nav-link" href="index.html"><span id="logo"></span></a>
+                <!-- Bouton d'OUVERTURE DU MENU MOBILE -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- MENU -->
+                <nav class="collapse navbar-collapse nav-h2 nav-mob" id="navbarSupportedContent">
+
+                     <!-- Liste des liens et pages -->
+                    <ul class="navbar-nav mr-auto">
+
+                      <!-- Page d'ACCUEIL -->   
+                      <li class="nav-item active"><a class="nav-link active" aria-current="page" href="index.html">Festival 2022<span class="sr-only">(current)</span></a></li>
+                      <!-- Lien : page  Nos Films -->
+                      <li class="nav-item"><a class="nav-link" href="nos-films.html">Nos films</a></li>
+                      <!-- Lien : page  L'Actualité du Festival -->
+                      <li class="nav-item"><a class="nav-link" href="actualite-festival.html">L'actualité du festival</a></li>
+                      <!-- Lien : page  Inscription -->
+                      <li class="nav-item"><a class="nav-link" href="inscription.html">Inscription</a></li>
+                      <!-- Lien : page  CONTACT -->
+                      <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </header>
+{% endblock %}
