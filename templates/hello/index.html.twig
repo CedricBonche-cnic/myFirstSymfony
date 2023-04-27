@@ -46,4 +46,12 @@
                     </ul>
                 </nav>
             </header>
+            <div>{{title | upper}}</div>
+            {# Un commentaire #}
+
+            <ul>
+                {% for item in array %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
 {% endblock %}

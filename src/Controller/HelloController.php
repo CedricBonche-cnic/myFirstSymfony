@@ -8,18 +8,23 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HelloController extends AbstractController
 {
-    #[Route('/hello', name: 'app_hello')]
-    public function index(): Response
+    #[Route("/hello/{param}", methods: ["GET"], requirements: ['param' => '\d+'])]
+    public function indexNumber($param): Response
     {
+        $title = "utilisateurs";
+        $users = ["Mickey","Leo", "Donnie", "Raph"];
         return $this->render('hello/index.html.twig', [
-            'controller_name' => 'HelloController',
+            'action' => 'Hello : Number ' .$param , 'controller_name' => 'HelloController', 'title' => $title, 'array' => $users
         ]);
     }
-
-    #[Route('/hello/hello')]
-    public function hello(): Response{
+    
+    #[Route("/hello/{param}", methods: ["GET"], requirements: ['param' => '^[a-zA-Z]+$'])]
+    public function indexdefault($param): Response
+    {
+        $title = "utilisateurs";
+        $users = ["Mickey","Leo", "Donnie", "Raph"];
         return $this->render('hello/index.html.twig', [
-            'action' => 'Hello !', 'controller_name' => 'HelloController',
+            'action' => 'Hello ! ' .$param , 'controller_name' => 'HelloController', 'title' => $title, 'array' => $users
         ]);
     }
 }
